@@ -25,14 +25,11 @@ This repository contains all the practical assignments completed as part of the 
 * **Assignment 03** – Fashion Store / E-Commerce Product Website
 * **Assignment 04** – Weather Dashboard with Data Visualization
 
-> Additional assignments can be added as they are completed.
-
----
 
 ## Hosted Website
 
 **Live Portfolio Website:**
-*Add your GitHub Pages URL here after deployment.*
+(https://shravanisonigra.github.io/FSDL-Lab-Work/)
 
 
 ## Technologies Used
