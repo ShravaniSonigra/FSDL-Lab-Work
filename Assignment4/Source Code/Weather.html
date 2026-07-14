@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <script src="https://d3js.org/d3.v7.min.js">   </script>
+
+    <style>
+        body{
+            font-family: Arial;
+            background: #f0f0f0;
+        }
+        card{
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h2{
+            margin-bottom: 10px;
+        }
+        .line{
+            fill: none;
+            stroke-width: 3px;
+        }
+        .temp{
+            stroke: red;
+        }
+        .humidity{
+            stroke: blue;
+        }
+        .rain{
+            stroke: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Monitoring Dashboard</h1>
+    <div class="card">
+        <h2>Weekly Weather Forecast</h2>
+        <svg width="800" height="400"></svg>
+    </div>
+    <script>
+        const data = [
+            {day:"Mon", temp:32,humidity:30, rain:10},
+            {day:"Tue", temp:34,humidity:25, rain:5},
+            {day:"Wed", temp:30,humidity:25, rain:20},
+            {day:"Thu", temp:31,humidity:20, rain:15},
+            {day:"Fri", temp:39,humidity:35, rain:10},
+            {day:"Sat", temp:29,humidity:20, rain:5},
+            {day:"Sun", temp:31,humidity:25, rain:8}
+        ];
+
+        const svg = d3.select("svg");
+        margin = {top: 30, right: 40, bottom: 50, left: 60},
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom;
+
+        const g= svg.append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const x = d3.scaleBand()
+        .domain(data.map(d => d.day))
+        .range([0, width])
+
+        const y= d3.scaleLinear()
+        .domain([0, d3.max(data, d => d.temp)])
+        .range([height, 0]);
+
+        g.append("g")
+        .attr("transform", `translate(0,${height})`)
+        .call(d3.axisBottom(x))
+
+        g.append("g")
+        .call(d3.axisLeft(y))
+
+        const tempLine = d3.line()
+        .x(d => x(d.day))
+        .y(d => y(d.temp));
+
+        const humidityLine = d3.line()
+        .x(d => x(d.day))
+        .y(d => y(d.humidity));
+
+        const rainLine = d3.line()
+        .x(d => x(d.day))
+        .y(d => y(d.rain));
+
+        // Draw lines
+        g.append("path").datum(data).attr("class", "line temp").attr("d", tempLine);
+        g.append("path").datum(data).attr("class", "line humidity").attr("d", humidityLine);
+        g.append("path").datum(data).attr("class", "line rain").attr("d", rainLine);
+
+        //Legend
+        const legend = g.append("g").attr("transform","translate(600,30)");
+
+        legend.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", 12)
+        .attr("height", 12)
+        .attr("fill", "red");
+
+        legend.append("text")
+            .attr("x", 20)
+            .attr("y", 10)
+            .text("Temperature (C)");
+
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", 25)
+            .attr("width", 12)
+            .attr("height", 12)
+            .attr("fill", "blue");
+
+        legend.append("text")
+            .attr("x", 20)
+            .attr("y", 35)
+            .text("Humidity (%)");
+
+        legend.append("rect")
+            .attr("x", 0)
+            .attr("y", 50)
+            .attr("width", 12)
+            .attr("height", 12)
+            .attr("fill", "green");
+
+        legend.append("text")
+            .attr("x", 20)
+            .attr("y", 60)
+            .text("Rain (mm)");
+            
+    </script>
+</body>
+</html>

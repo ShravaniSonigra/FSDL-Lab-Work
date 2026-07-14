@@ -1,0 +1,204 @@
+/* ================= ROOT THEME ================= */
+:root {
+  --surface: #ffffff;
+  --surface-alt: #f8fafc;
+
+  --text: #0f172a;
+  --muted: #475569;
+
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+
+  --accent: #0ea5e9;
+
+  --success: #16a34a;
+  --warning: #f59e0b;
+
+  --border: #e2e8f0;
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+/* ================= CONTAINER ================= */
+.app-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 22px 40px;
+}
+
+/* ================= HEADER ================= */
+.App-header {
+  text-align: center;
+  margin-bottom: 24px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+
+  animation: fadeInUp 0.8s ease-out;
+}
+
+h1, h2 {
+  letter-spacing: 0.5px;
+}
+
+/* ================= MAIN GRID ================= */
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+/* ================= FORM & LIST ================= */
+.feedback-form,
+.feedback-list {
+  background: white;
+  color: var(--text);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* ================= FORM ================= */
+.form-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 11px 13px;
+  font-size: 0.95rem;
+  background: #f8fafc;
+  color: var(--text);
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  outline: none;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.4);
+  background: linear-gradient(135deg, #3730a3, #0284c7);
+}
+
+/* ================= FEEDBACK LIST ================= */
+.feedback-list {
+  max-height: 76vh;
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+.feedback-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.feedback-list::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+/* ================= CARD ================= */
+.feedback-card {
+  background: white;
+  border-left: 5px solid var(--primary);
+  border-radius: 14px;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+}
+
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= CARD HEADER ================= */
+.feedback-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedback-card h4 {
+  margin: 0;
+}
+
+/* ================= SUBJECT BADGE ================= */
+.feedback-subject {
+  font-size: 0.8rem;
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ================= RATING ================= */
+.feedback-rating {
+  color: var(--warning);
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+/* ================= COMMENT ================= */
+.feedback-comment {
+  margin-top: 8px;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 920px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Result Dashboard - D3</title>
+
+    <!-- D3.js CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 450px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 60px;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h3 {
+            margin-top: 15px;
+        }
+
+        svg {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Result Dashboard</h2>
+
+    <div class="card">
+        <h3>Enter Marks (Out of 100)</h3>
+        <input type="number" id="m1" placeholder="Sub1">
+        <input type="number" id="m2" placeholder="Sub2">
+        <input type="number" id="m3" placeholder="Sub3">
+        <input type="number" id="m4" placeholder="Sub4">
+        <input type="number" id="m5" placeholder="Sub5">
+        <br>
+        <button onclick="calculate()">Calculate</button>
+
+        <h3 id="result"></h3>
+
+        <!-- D3 Chart Container -->
+        <div id="chart"></div>
+    </div>
+
+<script>
+
+    function calculate(){
+
+        let m1 = Number(document.getElementById('m1').value);
+        let m2 = Number(document.getElementById('m2').value);
+        let m3 = Number(document.getElementById('m3').value);
+        let m4 = Number(document.getElementById('m4').value);
+        let m5 = Number(document.getElementById('m5').value);
+
+        let total = m1 + m2 + m3 + m4 + m5;
+        let percentage = (total / 500) * 100;
+
+        let status = percentage >= 40 ? "Pass" : "Fail";
+
+        document.getElementById('result').innerHTML =
+            "Percentage: " + percentage.toFixed(2) + "% | " + status;
+
+        // Clear previous chart
+        d3.select("#chart").selectAll("*").remove();
+
+        // Data
+        let data = [
+            { label: "Scored %", value: percentage },
+            { label: "Remaining %", value: 100 - percentage }
+        ];
+
+        let width = 300;
+        let height = 300;
+        let radius = Math.min(width, height) / 2;
+
+        let svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        let color = d3.scaleOrdinal()
+            .domain(data)
+            .range(["#28a745", "#dc3545"]);
+
+        let pie = d3.pie()
+            .value(function(d) { return d.value; });
+
+        let data_ready = pie(data);
+
+        let arc = d3.arc()
+            .innerRadius(70)  // Doughnut hole
+            .outerRadius(radius);
+
+        svg.selectAll('path')
+            .data(data_ready)
+            .enter()
+            .append('path')
+            .attr('d', arc)
+            .attr('fill', function(d){ return color(d.data.label); })
+            .style("stroke", "white")
+            .style("stroke-width", "2px");
+
+        // Add center text
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .attr("dy", "0.35em")
+            .style("font-size", "18px")
+            .style("font-weight", "bold")
+            .text(percentage.toFixed(1) + "%");
+    }
+
+</script>
+
+</body>
+</html>

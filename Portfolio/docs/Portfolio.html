@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styleportfolio.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Shravani Sonigra</a>
+
+            <!-- Right Side Tabs -->
+            <ul class="nav ms-auto custom-tabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#home">Home</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#projects">Projects</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#skills">Skills</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#assignments">Assignments</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contact">Contact</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+
+        <div class="tab-content">
+
+            <!-- ================= HOME ================= -->
+            <div class="tab-pane fade show active" id="home">
+
+                <div class="row align-items-center home-section">
+
+                    <!-- Left Text -->
+                    <div class="col-md-6">
+                        <h1>Hi, I’m <span>Shravani</span></h1>
+
+                        <h5 class="mt-3">
+                            Computer Science Student • Web Developer • Cybersecurity Enthusiast
+                        </h5>
+
+                        <p class="mt-4">
+                            I am a passionate Computer Science student with strong interest in
+                            Artificial Intelligence, Cybersecurity, and Blockchain technologies.
+                            I enjoy building responsive web applications and solving real-world
+                            problems using data-driven solutions.
+                        </p>
+
+                        <p>
+                            My goal is to continuously improve my technical skills while contributing
+                            to innovative projects that create real impact. I am highly motivated,
+                            detail-oriented, and always eager to learn new technologies.
+                        </p>
+
+
+                        <div class="mt-4">
+                            <a href="#projects" class="btn btn-primary me-3">View Projects</a>
+                            <a href="#" class="btn btn-outline-dark">Download Resume</a>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="row mt-5">
+                            <div class="col-4 stat-box">
+                                <h3>4+</h3>
+                                <p>Projects</p>
+                            </div>
+                            <div class="col-4 stat-box">
+                                <h3>8+</h3>
+                                <p>Technologies</p>
+                            </div>
+                            <div class="col-4 stat-box">
+                                <h3>2+</h3>
+                                <p>Domains</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="col-md-6 text-center">
+                        <img src="assets/Profile.jpeg" class="profile-img" alt="Shravani">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ================= PROJECTS ================= -->
+            <div class="tab-pane fade" id="projects">
+                <div class="row">
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h5>Crop Disease Detection</h5>
+                                <p>Deep learning CNN model to classify plant leaf diseases with 90%+ accuracy using
+                                    TensorFlow & OpenCV.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h5>Movie Rating Prediction</h5>
+                                <p>Machine learning regression model predicting movie ratings using feature engineering
+                                    & multiple algorithms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h5>Cyber Risk Monitoring System</h5>
+                                <p>Real-time cyber threat detection system with dynamic risk scoring and automated alert
+                                    mechanisms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <h5>Blockchain – Proof of Presence</h5>
+                                <p>Blockchain-based attendance verification system to eliminate proxy marking using
+                                    tamper-proof ledger.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ================= SKILLS ================= -->
+            <div class="tab-pane fade" id="skills">
+                <div class="row text-center">
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-filetype-html"></i>
+                            <h6>HTML</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-filetype-css"></i>
+                            <h6>CSS</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-filetype-js"></i>
+                            <h6>JavaScript</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-bootstrap"></i>
+                            <h6>Bootstrap</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-filetype-py"></i>
+                            <h6>Python</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-database"></i>
+                            <h6>SQL</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-shield-lock"></i>
+                            <h6>Cybersecurity</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="skill-card">
+                            <i class="bi bi-link-45deg"></i>
+                            <h6>Blockchain</h6>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ================= ASSIGNMENTS ================= -->
+            <div class="tab-pane fade" id="assignments">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <section id="assignments-content" class="section">
+                            <h2 class="mb-3">FSDL Assignments</h2>
+                            <div class="card project-card mb-5">
+                                <div class="card-body">
+                                    <p>All previous Full Stack Development Lab (FSDL) assignments are uploaded in one
+                                        public GitHub repository.</p>
+                                    <a href="https://github.com/ShravaniSonigra/FSDL-Lab-Work.git" target="_blank"
+                                        class="btn btn-primary mt-2">
+                                        View GitHub Repository
+                                    </a>
+                                </div>
+                            </div>
+
+                            <h3 class="mb-3">Full Stack Web Development</h3>
+                            <div class="card project-card">
+                                <div class="card-body">
+                                    <p class="mb-3">
+                                        Building a complete web application requires connecting the frontend to a
+                                        dynamic backend and database. A popular approach uses the following
+                                        technologies:
+                                    </p>
+                                    <ul class="mb-0 text-start">
+                                        <li class="mb-2"><strong>HTML, CSS & JavaScript</strong>: The essential building
+                                            blocks of the front-end. They define the structure, visual aesthetics, and
+                                            interactivity of the user interface that runs directly in the browser.</li>
+                                        <li class="mb-2"><strong>Node.js & Express.js</strong>: The back-end engine.
+                                            Node.js executes JavaScript on the server, while Express is a minimalist
+                                            framework used to build robust RESTful APIs, route HTTP requests, and handle
+                                            server-side application logic efficiently.</li>
+                                        <li><strong>MongoDB</strong>: A flexible NoSQL database that stores data in
+                                            JSON-like documents. Because JavaScript uses JSON objects natively, MongoDB
+                                            is a natural fit for seamless data transfer between the front-end and
+                                            back-end in modern full-stack (like MERN) applications.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= CONTACT ================= -->
+            <!-- ================= CONTACT ================= -->
+            <div class="tab-pane fade contact-section" id="contact">
+                <div class="container d-flex justify-content-center align-items-center">
+
+                    <div class="contact-card text-center">
+
+                        <h1 class="mb-4">Get In Touch</h1>
+
+                        <p class="contact-desc">
+                            I am open to internships, collaborations, and exciting
+                            opportunities. Feel free to reach out!
+                        </p>
+
+                        <div class="contact-info mt-4">
+                            <p><strong>Email:</strong> shravaninsonigra@gmail.com</p>
+                            <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+                            <p><strong>Location:</strong> India</p>
+                        </div>
+
+                        <div class="mt-4">
+                            <a href="https://linkedin.com/in/shravanisonigra" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary me-3">linkedin.com/in/shravanisonigra</a>
+                            <a href="https://github.com/ShravaniSonigra" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-dark">github.com/ShravaniSonigra</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Shravani Sonigra | All Rights Reserved
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
