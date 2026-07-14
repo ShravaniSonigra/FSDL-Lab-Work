@@ -5,9 +5,9 @@
 | Field        | Details                           |
 | ------------ | --------------------------------- |
 | **Name**     | Shravani Sonigra                  |
-| **Roll No.** | *Your Roll Number*                |
-| **Class**    | *Your Class*                      |
-| **Division** | *Your Division*                   |
+| **Roll No.** | *123B1B063*                       |
+| **Class**    | *Btech*                           |
+| **Division** | *A*                               |
 | **Subject**  | Full Stack Development Lab (FSDL) |
 
 ---
@@ -34,26 +34,6 @@ This repository contains all the practical assignments completed as part of the 
 **Live Portfolio Website:**
 *Add your GitHub Pages URL here after deployment.*
 
-Example:
-
-```text
-https://your-username.github.io/FSDL-Practical-Assignments/
-```
-
----
-
-## Repository Link
-
-**GitHub Repository:**
-*Add your repository URL here.*
-
-Example:
-
-```text
-https://github.com/your-username/FSDL-Practical-Assignments
-```
-
----
 
 ## Technologies Used
 
